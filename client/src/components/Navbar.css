@@ -3,25 +3,29 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.0); /* fully transparent */
-  backdrop-filter: none;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
   padding: 1.2rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: none;
-  border-bottom: none;
-  position: relative;
-  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .sticky-navbar {
   position: sticky;
   top: 0;
   left: 0;
-  background: rgba(255,255,255,0.0); /* fully transparent */
-  backdrop-filter: none;
-  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
 
 .navbar-logo {
@@ -29,6 +33,7 @@
   align-items: center;
   gap: 0.7rem;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .navbar-logo img {
@@ -37,11 +42,14 @@
 }
 
 .navbar-brand {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #111;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6b35;
   letter-spacing: -0.5px;
   font-family: 'Playfair', serif;
+  margin-left: 0.5rem;
+  text-shadow: 0 1px 2px rgba(255, 107, 53, 0.1);
+  text-decoration: none;
 }
 
 .navbar-links {
@@ -64,8 +72,8 @@
 }
 
 .navbar-link:hover {
-  background: #eef2ff;
-  color: #2563eb;
+  background: #fff4f0;
+  color: #ff6b35;
 }
 
 .navbar-actions {
@@ -98,27 +106,27 @@
 
 .navbar-user-email {
   font-size: 1rem;
-  color: #222;
+  color: #d4461a;
   font-weight: 500;
-  background: #f3f4f6;
+  background: #fff4f0;
   padding: 0.3rem 0.7rem;
   border-radius: 0.5rem;
 }
 
 .navbar-btn-login {
-  background: #111;
+  background: #ff6b35;
   color: #fff;
   padding: 0.6rem 1.6rem;
   border-radius: 9999px;
   font-weight: 600;
   font-size: 1rem;
   border: none;
-  box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+  box-shadow: 0 2px 8px 0 rgba(255, 107, 53, 0.15);
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
 }
 
 .navbar-btn-login:hover {
-  background: #2563eb;
+  background: #d4461a;
   color: #fff;
 }

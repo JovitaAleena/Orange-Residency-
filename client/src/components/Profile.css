@@ -310,7 +310,7 @@
 }
 
 .profile-admin-btn:hover {
-  background: #111;
+  background: #ff6b35;
   color: #fff;
 }
 
@@ -454,7 +454,7 @@
 }
 
 .profile-edit-btn-small:hover {
-  background: #2563eb;
+  background: #ff6b35;
   transform: scale(1.1);
 }
 
@@ -545,7 +545,7 @@
 }
 
 .profile-edit-btn:hover {
-  background: #2563eb;
+  background: #ff6b35;
   transform: translateY(-1px);
 }
 

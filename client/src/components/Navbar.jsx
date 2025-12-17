@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
-import logo from "../assets/logo.svg";
+import logo from "../assets/orange.png";
 import searchIcon from "../assets/searchIcon.svg";
 import userIcon from "../assets/userIcon.svg";
   import { AuthContext } from "../context/AuthContext.jsx";
@@ -29,7 +29,7 @@ const Navbar = () => {
             alt="logo"
             style={{ height: '40px', width: 'auto', display: 'block' }}
           />
-          <span className="navbar-brand" style={{ color: '#111', fontWeight: 'bold', fontSize: '2rem', fontFamily: 'Playfair, serif' }}></span>
+          <span className="navbar-brand">Orange Residency</span>
         </a>
       </div>
       <div className="navbar-links">

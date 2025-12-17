@@ -70,8 +70,8 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #eef2ff;
-  color: #2563eb;
+  background: #fff4f0;
+  color: #ff6b35;
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.3rem 1rem;
@@ -142,7 +142,7 @@
 }
 
 .featured-btn {
-  background: #111;
+  background: #ff6b35;
   color: #fff;
   border: none;
   border-radius: 0.5rem;
@@ -154,7 +154,7 @@
 }
 
 .featured-btn:hover {
-  background: #2563eb;
+  background: #d4461a;
   color: #fff;
 }
 
@@ -176,9 +176,9 @@
 }
 
 .featured-view-btn:hover {
-  background: #2563eb;
+  background: #ff6b35;
   color: #fff;
-  border: 1.5px solid #2563eb;
+  border: 1.5px solid #ff6b35;
 }
 
 /* Modal Styles for Booking */
@@ -416,8 +416,8 @@
 
 .booking-input:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 /* Enhanced Pricing Styles */
@@ -447,7 +447,7 @@
 }
 
 .total-row {
-  border-top: 2px solid #2563eb;
+  border-top: 2px solid #ff6b35;
   padding-top: 1rem;
   margin-top: 0.5rem;
   font-weight: 700;
@@ -457,7 +457,7 @@
 
 .total-price {
   font-size: 1.5rem;
-  color: #2563eb;
+  color: #ff6b35;
   font-weight: 800;
 }
 
@@ -500,7 +500,7 @@
 .modal-book-btn {
   flex: 2;
   padding: 1rem;
-  background: #2563eb;
+  background: #ff6b35;
   color: white;
   border: none;
   border-radius: 0.8rem;
