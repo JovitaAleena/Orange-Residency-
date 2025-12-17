@@ -1,0 +1,28 @@
+// This file contains hotel image imports for use in the Bookings table
+import hotel1 from './exclusiveOfferCardImg1.png';
+import hotel2 from './exclusiveOfferCardImg2.png';
+import hotel3 from './exclusiveOfferCardImg3.png';
+import room1 from './roomImg1.png';
+import room2 from './roomImg2.png';
+import room3 from './roomImg3.png';
+
+export const hotelImages = {
+  'Urbanza Suites': hotel1,
+  'Grand Palace': hotel2,
+  'Lakeview Resort': hotel3,
+  'Sunset Villa': room1,
+  'Mountain Retreat': room2,
+  'City Lights Hotel': room3,
+  // Additional hotels from the booking system
+  'The Orchid Hotel': hotel1,
+  'Whistling Meadows Resort': hotel2,
+  'Radisson Blu Hotel': hotel3,
+  'Lotus Heritage Palace': room1,
+  'Taj Hotels': hotel1,
+  'Le Royal Meridien': hotel2,
+  'The Westin': hotel3,
+  'Lemon Tree Hotels': room1,
+  'Grand Hyatt': room2,
+  'Novotel Hyderabad': room3,
+  'ITC Grand Chola': hotel1,
+};
