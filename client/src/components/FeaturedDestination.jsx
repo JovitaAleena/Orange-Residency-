@@ -4,10 +4,10 @@ import { AuthContext } from "../context/AuthContext.jsx";
 import "./FeaturedDestination.css";
 import starIconFilled from "../assets/starIconFilled.svg";
 import locationIcon from "../assets/locationIcon.svg";
-import roomImg1 from "../assets/roomImg1.png";
-import roomImg2 from "../assets/roomImg2.png";
-import roomImg3 from "../assets/roomImg3.png";
-import roomImg4 from "../assets/roomImg4.png";
+import roomImg1 from "../assets/Orange Residency/MAN07885.JPG";
+import roomImg2 from "../assets/Orange Residency/MAN07891.JPG";
+import roomImg3 from "../assets/Orange Residency/MAN07904.JPG";
+import roomImg4 from "../assets/Orange Residency/MAN07915.JPG";
 
 const featuredRooms = [
   {

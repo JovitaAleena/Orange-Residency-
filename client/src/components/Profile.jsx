@@ -7,7 +7,7 @@ import maleIcon from "../assets/maleIcon.svg";
 import femaleIcon from "../assets/femaleIcon.svg";
 import otherIcon from "../assets/otherIcon.svg";
 import editIcon from "../assets/editIcon.svg";
-import { hotelImages } from "../assets/hotelImages";
+import { hotelImages, getRandomHotelImage } from "../assets/hotelImages";
 import {
   BarChart,
   Bar,
@@ -57,7 +57,7 @@ const initialReservations = [
     hotel: "Grand Palace",
     checkIn: "2025-08-01",
     checkOut: "2025-08-05",
-    status: "Cart",
+    status: "Paid",
     guests: 4,
     image: hotelImages["Grand Palace"],
   },
@@ -68,6 +68,22 @@ const initialReservations = [
     status: "Canceled",
     guests: 3,
     image: hotelImages["Lakeview Resort"],
+  },
+  {
+    hotel: "The Orchid Hotel",
+    checkIn: "2025-08-05",
+    checkOut: "2025-08-06",
+    status: "Canceled",
+    guests: 1,
+    image: hotelImages["The Orchid Hotel"],
+  },
+  {
+    hotel: "Sunset Villa",
+    checkIn: "2025-08-06",
+    checkOut: "2025-08-09",
+    status: "Cart",
+    guests: 3,
+    image: hotelImages["Sunset Villa"],
   },
 ];
 
@@ -510,6 +526,26 @@ const initialBookings = [
     rating: 1,
     description: "did not like the service there."
   },
+  {
+    hotel: "The Orchid Hotel",
+    location: "Mumbai",
+    checkIn: "2025-03-15",
+    checkOut: "2025-03-17",
+    guests: 2,
+    image: hotelImages["The Orchid Hotel"],
+    rating: 5,
+    description: "Excellent service and beautiful rooms!"
+  },
+  {
+    hotel: "Taj Hotels",
+    location: "Mumbai",
+    checkIn: "2025-02-10",
+    checkOut: "2025-02-13",
+    guests: 4,
+    image: hotelImages["Taj Hotels"],
+    rating: 5,
+    description: "Luxury at its finest!"
+  },
 ];
 
 // Force update bookings to remove Le Royal Meridien
@@ -803,7 +839,7 @@ return (
                 <div className="profile-create-teams">
                     <div className="profile-create-icon" aria-label="Create Teams" role="img">👤</div>
                     <div>
-                        <div className="profile-create-title">Synergech</div>
+                        <div className="profile-create-title">Orange Residency</div>
                         <div className="profile-create-desc">Your Stay, Just a Click Away!</div>
                     </div>
                 </div>
@@ -831,8 +867,15 @@ return (
               <tbody>
                 {showCreate && (
                   <tr>
-                    <td style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-                      <img src={hotelImages[createData.hotel]} alt={createData.hotel} className="hotel-thumb" />
+                    <td className="hotel-cell">
+                      <img 
+                        src={hotelImages[createData.hotel] || getRandomHotelImage(createData.hotel)} 
+                        alt={createData.hotel} 
+                        className="hotel-thumb"
+                        onError={(e) => {
+                          e.target.src = hotelImages['default'];
+                        }}
+                      />
                       <select name="hotel" value={createData.hotel} onChange={handleCreateChange} className="crud-input">
                         <option value="Urbanza Suites">Urbanza Suites</option>
                         <option value="Grand Palace">Grand Palace</option>
@@ -857,9 +900,16 @@ return (
                 )}
                 {reservations.map((row, idx) => (
                   <tr key={idx}>
-                    <td style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-                      <img src={row.image || hotelImages[row.hotel]} alt={row.hotel} className="hotel-thumb" />
-                      {row.hotel}
+                    <td className="hotel-cell">
+                      <img 
+                        src={row.image || hotelImages[row.hotel] || getRandomHotelImage(row.hotel)} 
+                        alt={row.hotel} 
+                        className="hotel-thumb"
+                        onError={(e) => {
+                          e.target.src = hotelImages['default'];
+                        }}
+                      />
+                      <span>{row.hotel}</span>
                     </td>
                     {editIdx === idx ? (
                       <>
@@ -918,9 +968,16 @@ return (
               <tbody>
                 {bookings.map((booking, idx) => (
                   <tr key={idx}>
-                    <td style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-                      <img src={booking.image} alt={booking.hotel} className="hotel-thumb" />
-                      {booking.hotel}
+                    <td className="hotel-cell">
+                      <img 
+                        src={booking.image || hotelImages[booking.hotel] || getRandomHotelImage(booking.hotel)} 
+                        alt={booking.hotel} 
+                        className="hotel-thumb"
+                        onError={(e) => {
+                          e.target.src = hotelImages['default'];
+                        }}
+                      />
+                      <span>{booking.hotel}</span>
                     </td>
                     <td>{booking.location}</td>
                     <td>{booking.checkIn}</td>

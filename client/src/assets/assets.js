@@ -23,14 +23,14 @@ import badgeIcon from './badgeIcon.svg'
 import menuIcon from './menuIcon.svg'
 import closeMenu from './closeMenu.svg'
 import guestsIcon from './guestsIcon.svg'
-import roomImg1 from './roomImg1.png'
-import roomImg2 from './roomImg2.png'
-import roomImg3 from './roomImg3.png'
-import roomImg4 from './roomImg4.png'
-import regImage from './regImage.png'
-import exclusiveOfferCardImg1 from "./exclusiveOfferCardImg1.png";
-import exclusiveOfferCardImg2 from "./exclusiveOfferCardImg2.png";
-import exclusiveOfferCardImg3 from "./exclusiveOfferCardImg3.png";
+import roomImg1 from './Orange Residency/MAN07802.JPG'
+import roomImg2 from './Orange Residency/MAN07804.JPG'
+import roomImg3 from './Orange Residency/MAN07817.JPG'
+import roomImg4 from './Orange Residency/MAN07819.JPG'
+import regImage from './Orange Residency/MAN07822.JPG'
+import exclusiveOfferCardImg1 from "./Orange Residency/MAN07824.JPG";
+import exclusiveOfferCardImg2 from "./Orange Residency/MAN07826.JPG";
+import exclusiveOfferCardImg3 from "./Orange Residency/MAN07829.JPG";
 import addIcon from "./addIcon.svg";
 import dashboardIcon from "./dashboardIcon.svg";
 import listIcon from "./listIcon.svg";

@@ -2,12 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext.jsx";
 import "./Hotels.css";
-import hotel1 from "../assets/exclusiveOfferCardImg1.png";
-import hotel2 from "../assets/exclusiveOfferCardImg2.png";
-import hotel3 from "../assets/exclusiveOfferCardImg3.png";
-import room1 from "../assets/roomImg1.png";
-import room2 from "../assets/roomImg2.png";
-import room3 from "../assets/roomImg3.png";
+import hotel1 from "../assets/Orange Residency/MAN07866.JPG";
+import hotel2 from "../assets/Orange Residency/MAN07867.JPG";
+import hotel3 from "../assets/Orange Residency/MAN07874.JPG";
+import room1 from "../assets/Orange Residency/MAN07876.JPG";
+import room2 from "../assets/Orange Residency/MAN07879.JPG";
+import room3 from "../assets/Orange Residency/MAN07882.JPG";
 
 const hotelsList = [
   {
