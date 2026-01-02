@@ -256,20 +256,21 @@
 }
 
 .profile-create-teams {
-  background: linear-gradient(135deg, #070447 70%, #23244a 100%);
+  background: linear-gradient(135deg, #fff8f3 70%, #ffe4cc 100%);
   border-radius: 1.2rem;
   padding: 1.2rem 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: #fff;
-  box-shadow: 0 2px 12px rgba(99,102,241,0.10);
+  color: #8b4513;
+  box-shadow: 0 2px 12px rgba(255, 107, 53, 0.10);
+  border: 1px solid rgba(255, 159, 102, 0.2);
 }
 
 .profile-create-icon {
   font-size: 2rem;
-  background: #fff;
-  color: #6c63ff;
+  background: #ff6b35;
+  color: #fff;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
@@ -281,11 +282,13 @@
 .profile-create-title {
   font-size: 1.1rem;
   font-weight: 600;
+  color: #d4461a;
 }
 
 .profile-create-desc {
   font-size: 0.95rem;
-  color: #e0e7ff;
+  color: #8b4513;
+  font-weight: 500;
 }
 
 .profile-main {

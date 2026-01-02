@@ -46,44 +46,44 @@ const Profile = () => {
 // Reservation data state for CRUD
 const initialReservations = [
   {
-    hotel: "Urbanza Suites",
+    hotel: "2 Bed Deluxe",
     checkIn: "2025-07-25",
     checkOut: "2025-07-28",
     status: "Paid",
     guests: 2,
-    image: hotelImages["Urbanza Suites"],
+    image: hotelImages["2 Bed Deluxe"],
   },
   {
-    hotel: "Grand Palace",
+    hotel: "4 Bed Standard",
     checkIn: "2025-08-01",
     checkOut: "2025-08-05",
     status: "Paid",
     guests: 4,
-    image: hotelImages["Grand Palace"],
+    image: hotelImages["4 Bed Standard"],
   },
   {
-    hotel: "Lakeview Resort",
+    hotel: "2 Bed Family",
     checkIn: "2025-08-10",
     checkOut: "2025-08-12",
     status: "Canceled",
     guests: 3,
-    image: hotelImages["Lakeview Resort"],
+    image: hotelImages["2 Bed Family"],
   },
   {
-    hotel: "The Orchid Hotel",
+    hotel: "4 Bed Deluxe",
     checkIn: "2025-08-05",
     checkOut: "2025-08-06",
     status: "Canceled",
     guests: 1,
-    image: hotelImages["The Orchid Hotel"],
+    image: hotelImages["4 Bed Deluxe"],
   },
   {
-    hotel: "Sunset Villa",
+    hotel: "2 Bed Standard",
     checkIn: "2025-08-06",
     checkOut: "2025-08-09",
     status: "Cart",
     guests: 3,
-    image: hotelImages["Sunset Villa"],
+    image: hotelImages["2 Bed Standard"],
   },
 ];
 
@@ -93,7 +93,7 @@ const [editData, setEditData] = useState({});
 const [originalEditData, setOriginalEditData] = useState(null); // Track original data for status change detection
 const [showCreate, setShowCreate] = useState(false);
 const [createData, setCreateData] = useState({
-  hotel: "Urbanza Suites",
+  hotel: "2 Bed Deluxe",
   checkIn: "",
   checkOut: "",
   status: "Paid",
@@ -497,52 +497,52 @@ useEffect(() => {
 // Bookings data and rating/description state
 const initialBookings = [
   {
-    hotel: "Urbanza Suites",
-    location: "Delhi",
+    hotel: "2 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
     checkIn: "2025-06-10",
     checkOut: "2025-06-12",
     guests: 2,
-    image: hotelImages["Urbanza Suites"],
+    image: hotelImages["2 Bed Deluxe"],
     rating: 4,
     description: "Amazing!"
   },
   {
-    hotel: "Grand Palace",
-    location: "Mumbai",
+    hotel: "4 Bed Standard",
+    location: "Orange Residency, Rameswaram",
     checkIn: "2025-05-15",
     checkOut: "2025-05-18",
     guests: 3,
-    image: hotelImages["Grand Palace"],
+    image: hotelImages["4 Bed Standard"],
     rating: 3,
     description: "I loved the food there."
   },
   {
-    hotel: "Lakeview Resort",
-    location: "Bangalore",
+    hotel: "2 Bed Family",
+    location: "Orange Residency, Rameswaram",
     checkIn: "2025-04-20",
     checkOut: "2025-04-22",
     guests: 1,
-    image: hotelImages["Lakeview Resort"],
+    image: hotelImages["2 Bed Family"],
     rating: 1,
     description: "did not like the service there."
   },
   {
-    hotel: "The Orchid Hotel",
-    location: "Mumbai",
+    hotel: "4 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
     checkIn: "2025-03-15",
     checkOut: "2025-03-17",
     guests: 2,
-    image: hotelImages["The Orchid Hotel"],
+    image: hotelImages["4 Bed Deluxe"],
     rating: 5,
     description: "Excellent service and beautiful rooms!"
   },
   {
-    hotel: "Taj Hotels",
-    location: "Mumbai",
+    hotel: "2 Bed Standard",
+    location: "Orange Residency, Rameswaram",
     checkIn: "2025-02-10",
     checkOut: "2025-02-13",
     guests: 4,
-    image: hotelImages["Taj Hotels"],
+    image: hotelImages["2 Bed Standard"],
     rating: 5,
     description: "Luxury at its finest!"
   },
@@ -579,7 +579,7 @@ const adminDashboardData = {
   totalBookings: 84,
   totalCheckIns: 23,
   totalCheckOuts: 12,
-  totalRevenue: 98,
+  totalRevenue: 2600000,
   overallRating: 4.6,
   
   // Growth percentages
@@ -588,23 +588,23 @@ const adminDashboardData = {
   checkOutsGrowth: -1.06, // negative growth
   revenueGrowth: 6.70,
   
-  // Room availability data by most booked hotels
+  // Room availability data by most booked room types
   roomStats: {
-    'Urbanza Suites': { occupied: 45, reserved: 12, available: 8, notReady: 2 },
-    'Grand Palace': { occupied: 38, reserved: 15, available: 5, notReady: 3 },
-    'Lakeview Resort': { occupied: 32, reserved: 10, available: 12, notReady: 1 },
-    'The Orchid Hotel': { occupied: 28, reserved: 8, available: 15, notReady: 2 },
-    'Taj Hotels': { occupied: 42, reserved: 18, available: 6, notReady: 4 }
+    '2 Bed Deluxe': { occupied: 45, reserved: 12, available: 8, notReady: 2 },
+    '4 Bed Standard': { occupied: 38, reserved: 15, available: 5, notReady: 3 },
+    '2 Bed Family': { occupied: 32, reserved: 10, available: 12, notReady: 1 },
+    '4 Bed Deluxe': { occupied: 28, reserved: 8, available: 15, notReady: 2 },
+    '2 Bed Standard': { occupied: 42, reserved: 18, available: 6, notReady: 4 }
   },
   
   // Revenue over time (Last 6 Months)
   revenueData: [
-    { month: 'Dec 2024', revenue: 300000 },
-    { month: 'Jan 2025', revenue: 350000 },
-    { month: 'Feb 2025', revenue: 320000 },
-    { month: 'Mar 2025', revenue: 380000 },
-    { month: 'Apr 2025', revenue: 410000 },
-    { month: 'May 2025', revenue: 315000 },
+    { month: 'Dec 2024', revenue: 2500000 },
+    { month: 'Jan 2025', revenue: 2900000 },
+    { month: 'Feb 2025', revenue: 2650000 },
+    { month: 'Mar 2025', revenue: 3150000 },
+    { month: 'Apr 2025', revenue: 3400000 },
+    { month: 'May 2025', revenue: 2600000 },
   ],
   
   // Reservations over time (Last 7 Months)
@@ -620,14 +620,13 @@ const adminDashboardData = {
   
   // Booking platforms
   platformData: [
-    { name: 'Urbanza Suites', value: 25, color: '#00C49F' },
-    { name: 'Grand Palace', value: 20, color: '#FFBB28' },
-    { name: 'Lakeview Resort', value: 15, color: '#FF8042' },
-    { name: 'The Orchid Hotel', value: 12, color: '#8884d8' },
-    { name: 'Taj Hotels', value: 10, color: '#82ca9d' },
-    { name: 'Grand Hyatt', value: 8, color: '#ffc658' },
-    { name: 'The Westin', value: 6, color: '#ff7c7c' },
-    { name: 'Others', value: 4, color: '#8dd1e1' },
+    { name: '2 Bed Deluxe', value: 25, color: '#00C49F' },
+    { name: '4 Bed Standard', value: 20, color: '#FFBB28' },
+    { name: '2 Bed Family', value: 15, color: '#FF8042' },
+    { name: '4 Bed Deluxe', value: 12, color: '#8884d8' },
+    { name: '2 Bed Standard', value: 10, color: '#82ca9d' },
+    { name: '4 Bed Family', value: 8, color: '#ffc658' },
+    { name: 'Others', value: 10, color: '#8dd1e1' },
   ],
   
   // Rating breakdown
@@ -733,22 +732,14 @@ const handleEditSave = (idx) => {
 // Helper function to get hotel location
 const getHotelLocation = (hotelName) => {
   const locationMap = {
-    "Urbanza Suites": "Delhi",
-    "Grand Palace": "Mumbai", 
-    "Lakeview Resort": "Bangalore",
-    "The Orchid Hotel": "Mumbai",
-    "Whistling Meadows Resort": "Goa",
-    "Radisson Blu Hotel": "Bangalore",
-    "Lotus Heritage Palace": "Jaipur",
-    "Taj Hotels": "Mumbai",
-    "Le Royal Meridien": "Kochi",
-    "The Westin": "Chennai",
-    "Lemon Tree Hotels": "Delhi",
-    "Grand Hyatt": "Mumbai",
-    "Novotel Hyderabad": "Hyderabad",
-    "ITC Grand Chola": "Chennai"
+    "2 Bed Deluxe": "Orange Residency, Rameswaram",
+    "2 Bed Standard": "Orange Residency, Rameswaram", 
+    "2 Bed Family": "Orange Residency, Rameswaram",
+    "4 Bed Deluxe": "Orange Residency, Rameswaram",
+    "4 Bed Standard": "Orange Residency, Rameswaram",
+    "4 Bed Family": "Orange Residency, Rameswaram"
   };
-  return locationMap[hotelName] || "Unknown";
+  return locationMap[hotelName] || "Orange Residency, Rameswaram";
 };
 const handleEditCancel = () => {
   setEditIdx(null);
@@ -789,11 +780,11 @@ const handleCreateSave = () => {
   // Add to reservations
   setReservations(reservations => [newReservation, ...reservations]);
   setShowCreate(false);
-  setCreateData({ hotel: "Urbanza Suites", checkIn: "", checkOut: "", status: "Paid", guests: 1 });
+  setCreateData({ hotel: "2 Bed Deluxe", checkIn: "", checkOut: "", status: "Paid", guests: 1 });
 };
 const handleCreateCancel = () => {
   setShowCreate(false);
-  setCreateData({ hotel: "Urbanza Suites", checkIn: "", checkOut: "", status: "Paid", guests: 1 });
+  setCreateData({ hotel: "2 Bed Deluxe", checkIn: "", checkOut: "", status: "Paid", guests: 1 });
 };
 
 return (
@@ -840,7 +831,7 @@ return (
                     <div className="profile-create-icon" aria-label="Create Teams" role="img">👤</div>
                     <div>
                         <div className="profile-create-title">Orange Residency</div>
-                        <div className="profile-create-desc">Your Stay, Just a Click Away!</div>
+                        <div className="profile-create-desc">Affordable • Clean • Peaceful • Family Friendly</div>
                     </div>
                 </div>
             </div>
@@ -877,9 +868,12 @@ return (
                         }}
                       />
                       <select name="hotel" value={createData.hotel} onChange={handleCreateChange} className="crud-input">
-                        <option value="Urbanza Suites">Urbanza Suites</option>
-                        <option value="Grand Palace">Grand Palace</option>
-                        <option value="Lakeview Resort">Lakeview Resort</option>
+                        <option value="2 Bed Deluxe">2 Bed Deluxe</option>
+                        <option value="2 Bed Standard">2 Bed Standard</option>
+                        <option value="2 Bed Family">2 Bed Family</option>
+                        <option value="4 Bed Deluxe">4 Bed Deluxe</option>
+                        <option value="4 Bed Standard">4 Bed Standard</option>
+                        <option value="4 Bed Family">4 Bed Family</option>
                       </select>
                     </td>
                     <td><input name="checkIn" type="date" value={createData.checkIn} onChange={handleCreateChange} className="crud-input" /></td>
@@ -1086,7 +1080,7 @@ return (
                 <div className="metric-icon">💰</div>
                 <div className="metric-content">
                   <div className="metric-label">Total Revenue</div>
-                  <div className="metric-value">${adminDashboardData.totalRevenue.toLocaleString()}</div>
+                  <div className="metric-value">₹{adminDashboardData.totalRevenue.toLocaleString()}</div>
                   <div className={`metric-growth ${adminDashboardData.revenueGrowth > 0 ? 'positive' : 'negative'}`}>
                     {adminDashboardData.revenueGrowth > 0 ? '↗' : '↘'} {Math.abs(adminDashboardData.revenueGrowth)}% from last week
                   </div>
@@ -1100,7 +1094,7 @@ return (
               <div className="chart-row">
                 <div className="chart-card">
                   <div className="chart-header">
-                    <h3>Room Availability by Top Hotels</h3>
+                    <h3>Room Availability by Room Types</h3>
                     <div className="chart-menu">⋯</div>
                   </div>
                   <div className="room-legend">
@@ -1123,8 +1117,8 @@ return (
                   </div>
                   <div className="room-visual">
                     <ResponsiveContainer width="100%" height={300}>
-                      <BarChart data={Object.entries(adminDashboardData.roomStats).map(([hotel, stats]) => ({
-                        hotel: hotel.replace(' Hotel', '').replace(' Hotels', ''),
+                      <BarChart data={Object.entries(adminDashboardData.roomStats).map(([roomType, stats]) => ({
+                        roomType: roomType,
                         occupied: stats.occupied,
                         reserved: stats.reserved,
                         available: stats.available,
@@ -1132,7 +1126,7 @@ return (
                       }))}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis 
-                          dataKey="hotel" 
+                          dataKey="roomType" 
                           angle={-45}
                           textAnchor="end"
                           height={80}
@@ -1141,7 +1135,7 @@ return (
                         <YAxis />
                         <Tooltip 
                           formatter={(value, name) => [value, name.charAt(0).toUpperCase() + name.slice(1)]}
-                          labelFormatter={(label) => `Hotel: ${label}`}
+                          labelFormatter={(label) => `Room Type: ${label}`}
                         />
                         <Legend />
                         <Bar dataKey="occupied" fill="#4ade80" name="Occupied" />
@@ -1161,7 +1155,7 @@ return (
                     </select>
                   </div>
                   <div className="revenue-highlight">
-                    <span className="revenue-amount">$315,060</span>
+                    <span className="revenue-amount">₹26,00,000</span>
                     <span className="revenue-date">May 2025</span>
                   </div>
                   <ResponsiveContainer width="100%" height={250}>
@@ -1212,7 +1206,7 @@ return (
 
                 <div className="chart-card">
                   <div className="chart-header">
-                    <h3>Booking by Hotel</h3>
+                    <h3>Booking by Room Type</h3>
                     <div className="chart-menu">⋯</div>
                   </div>
                   <div className="platform-content">
