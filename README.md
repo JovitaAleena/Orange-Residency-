@@ -1,1 +1,1 @@
-# Hotel-Booking_Synergech
+# Hotel-Booking
