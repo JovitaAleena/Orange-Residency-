@@ -851,7 +851,7 @@ return (
           <div className="crud-table-container">
             <div className="crud-table-header-row">
               <h3>Reservations</h3>
-              <button className="crud-create-btn" onClick={() => navigate('/hotels')}>+ Book Hotel</button>
+              <button className="crud-create-btn" onClick={() => navigate('/accommodation')}>+ Book Hotel</button>
             </div>
             <table className="crud-table">
               <thead>

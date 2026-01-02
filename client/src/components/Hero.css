@@ -4,29 +4,68 @@
   gap: 0.5rem;
   margin-bottom: 0.2rem;
 }
+
 .hero-section {
   position: relative;
   width: 100%;
   min-height: 80vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+
+/* Background Images with Smooth Transitions */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.hero-background-next {
+  opacity: 0;
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+.hero-background-next.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 0;
+}
+
+.hero-background.transitioning {
+  opacity: 0;
+  transform: scale(0.95);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.40);
-  z-index: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(210, 105, 30, 0.2) 100%);
+  z-index: 1;
+  animation: overlayPulse 8s ease-in-out infinite;
+}
+
+@keyframes overlayPulse {
+  0%, 100% {
+    background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(210, 105, 30, 0.2) 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(210, 105, 30, 0.3) 100%);
+  }
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -34,18 +73,60 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroContentSlideIn 1.5s ease-out forwards;
+}
+
+@keyframes heroContentSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-label {
   display: inline-block;
-  background: #ff6b35;
+  background: linear-gradient(135deg, #ff6b35, #d2691e);
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
-  box-shadow: 0 2px 8px rgba(90, 92, 230, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
   margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: labelFloat 3s ease-in-out infinite;
+}
+
+@keyframes labelFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero-label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: labelShimmer 3s infinite;
+}
+
+@keyframes labelShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .hero-title {
@@ -55,24 +136,70 @@
   color: #fff;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
 }
 
-.hero-desc {
-  color: #f3f4f6;
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+.title-line,
+.subtitle-line {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: titleSlideIn 1s ease-out forwards;
 }
 
+.title-line {
+  animation-delay: 0.5s;
+  background: linear-gradient(135deg, #fff, #ffe4cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
+.subtitle-line {
+  animation-delay: 0.8s;
+  font-size: 2rem;
+  color: #ffe4cc;
+}
+
+@keyframes titleSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .hero-searchbar {
   background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
   border-radius: 1.2rem;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   padding: 1.2rem 1.5rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -80,9 +207,18 @@
   align-items: stretch;
   width: 100%;
   max-width: 950px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: searchbarSlideIn 1s ease-out 1.2s forwards;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-
+@keyframes searchbarSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .hero-searchbar .search-field {
   display: flex;
@@ -95,6 +231,11 @@
   box-sizing: border-box;
   height: 56px;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.hero-searchbar .search-field:hover {
+  transform: translateY(-2px);
 }
 
 .hero-searchbar .search-field label {
@@ -103,11 +244,17 @@
   font-weight: 600;
   margin-bottom: 0.2rem;
   width: 100%;
+  transition: color 0.3s ease;
 }
 
-.hero-searchbar .search-field input {
+.hero-searchbar .search-field:hover label {
+  color: #d2691e;
+}
+
+.hero-searchbar .search-field input,
+.hero-searchbar .search-select {
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  border: 2px solid #e5e7eb;
   outline: none;
   color: #111;
   font-size: 1rem;
@@ -118,23 +265,20 @@
   border-radius: 0.5rem;
   margin-top: 0.1rem;
   box-sizing: border-box;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.hero-searchbar .search-select {
-  width: 100%;
-  padding: 0.5rem 0.7rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  background: #f9fafb;
-  color: #111;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-top: 0.1rem;
-  box-sizing: border-box;
+.hero-searchbar .search-field input:focus,
+.hero-searchbar .search-select:focus {
+  border-color: #d2691e;
+  box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+  transform: translateY(-1px);
+  background: #fff;
 }
 
 .hero-searchbar .search-btn {
-  background: #ff6b35;
+  background: linear-gradient(135deg, #ff6b35, #d2691e);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
@@ -145,37 +289,84 @@
   align-items: center;
   gap: 0.7rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px 0 rgba(255, 107, 53, 0.15);
-  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
   height: 100%;
   min-width: 120px;
   justify-content: center;
   font-family: inherit;
   align-self: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-searchbar .search-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero-searchbar .search-btn:hover::before {
+  left: 100%;
 }
 
 .hero-searchbar .search-btn:hover {
-  background: #d4461a;
-  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
-@media (max-width: 800px) {
-  .hero-searchbar {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, auto);
-    gap: 0.8rem;
-    padding: 1rem 0.7rem;
-    max-width: 100%;
+.hero-searchbar .search-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Navigation Arrows */
+.hero-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: navButtonSlideIn 1s ease-out 2s forwards;
+}
+
+@keyframes navButtonSlideIn {
+  to {
+    opacity: 1;
   }
-  .hero-searchbar .search-btn {
-    width: 100%;
-    min-width: 0;
-    justify-self: stretch;
-    align-self: stretch;
-  }
-  .hero-searchbar .search-field {
-    height: auto;
-  }
+}
+
+.hero-nav-prev {
+  left: 2rem;
+}
+
+.hero-nav-next {
+  right: 2rem;
+}
+
+.hero-nav-btn:hover {
+  background: rgba(210, 105, 30, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(210, 105, 30, 0.3);
 }
 
 /* Slideshow Indicators */
@@ -186,26 +377,116 @@
   transform: translateX(-50%);
   display: flex;
   gap: 0.8rem;
-  z-index: 2;
+  z-index: 3;
+  opacity: 0;
+  animation: indicatorsSlideIn 1s ease-out 1.8s forwards;
+}
+
+@keyframes indicatorsSlideIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .indicator {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff6b35, #d2691e);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
 }
 
 .indicator:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .indicator.active {
-  background: #ff6b35;
+  background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.8);
-  transform: scale(1.2);
+  transform: scale(1.3);
+}
+
+.indicator.active::before {
+  transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle-line {
+    font-size: 1.5rem;
+  }
+
+  .hero-searchbar {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: 0.8rem;
+    padding: 1rem 0.7rem;
+    max-width: 100%;
+  }
+  
+  .hero-searchbar .search-btn {
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+    align-self: stretch;
+  }
+  
+  .hero-searchbar .search-field {
+    height: auto;
+  }
+
+  .hero-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .hero-nav-prev {
+    left: 1rem;
+  }
+
+  .hero-nav-next {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .subtitle-line {
+    font-size: 1.2rem;
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+  }
+
+  .hero-nav-btn {
+    display: none;
+  }
 }

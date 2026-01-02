@@ -54,12 +54,12 @@ const Login = () => {
     
     login({ email });
     
-    // Check if user should be redirected back to hotels page
+    // Check if user should be redirected back to accommodation page
     const urlParams = new URLSearchParams(location.search);
     const returnTo = urlParams.get('returnTo');
     
-    if (returnTo === 'hotels') {
-      navigate('/hotels');
+    if (returnTo === 'accommodation' || returnTo === 'hotels') {
+      navigate('/accommodation');
     } else {
       navigate("/");
     }
@@ -69,12 +69,12 @@ const Login = () => {
     // Dummy Google login
     login({ email: "googleuser@gmail.com" });
     
-    // Check if user should be redirected back to hotels page
+    // Check if user should be redirected back to accommodation page
     const urlParams = new URLSearchParams(location.search);
     const returnTo = urlParams.get('returnTo');
     
-    if (returnTo === 'hotels') {
-      navigate('/hotels');
+    if (returnTo === 'accommodation' || returnTo === 'hotels') {
+      navigate('/accommodation');
     } else {
       navigate("/");
     }
@@ -84,12 +84,12 @@ const Login = () => {
     // Dummy Facebook login
     login({ email: "facebookuser@gmail.com" });
     
-    // Check if user should be redirected back to hotels page
+    // Check if user should be redirected back to accommodation page
     const urlParams = new URLSearchParams(location.search);
     const returnTo = urlParams.get('returnTo');
     
-    if (returnTo === 'hotels') {
-      navigate('/hotels');
+    if (returnTo === 'accommodation' || returnTo === 'hotels') {
+      navigate('/accommodation');
     } else {
       navigate("/");
     }

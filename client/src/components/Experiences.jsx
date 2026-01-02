@@ -8,43 +8,43 @@ const reviews = [
     name: "Raj Sharma",
     image: userIcon,
     rating: 4,
-    text: "With Synergech, I do not just book a hotel, I book an experience. The level of personalization and the ease of booking all combine to create a travel experience that feels effortless and premium."
+    text: "With Orange Residency, I do not just book a hotel, I book an experience. The level of personalization and the ease of booking all combine to create a travel experience that feels effortless and premium."
   },
   {
     name: "Liam Johnson",
     image: userIcon,
     rating: 5,
-    text: "Synergech truly redefines hotel booking every recommendation feels handpicked just for me.It is like they understand my travel style better than I do!"
+    text: "Orange Residency truly redefines hotel booking every recommendation feels handpicked just for me.It is like they understand my travel style better than I do!"
   },
   {
     name: "Sophia Lee",
     image: userIcon,
     rating: 4,
-    text: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that Synergech provides. Their curated selection of hotels is unmatched."
+    text: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that Orange Residency provides. Their curated selection of hotels is unmatched."
   },
   {
     name: "David Kim",
     image: userIcon,
     rating: 5,
-    text: "Synergech made my business trip stress-free. The booking process was seamless and the hotel recommendations were spot on. Highly recommended!"
+    text: "Orange Residency made my business trip stress-free. The booking process was seamless and the hotel recommendations were spot on. Highly recommended!"
   },
   {
     name: "Priya Sharma",
     image: userIcon,
     rating: 3,
-    text: "I loved the attention to detail and the friendly support team. Synergech helped me find the perfect hotel for my family vacation."
+    text: "I loved the attention to detail and the friendly support team. Orange Residency helped me find the perfect hotel for my family vacation."
   },
   {
     name: "Alex Turner",
     image: userIcon,
     rating: 5,
-    text: "Good experience overall. The site is easy to use and the hotel options are great. Will use Synergech again for my next trip."
+    text: "Good experience overall. The site is easy to use and the hotel options are great. Will use Orange Residency again for my next trip."
   },
   {
     name: "Fatima Noor",
     image: userIcon,
     rating: 4,
-    text: "Synergech exceeded my expectations! The curated hotels were luxurious and the booking process was quick and simple."
+    text: "Orange Residency exceeded my expectations! The curated hotels were luxurious and the booking process was quick and simple."
   },
 ];
 
@@ -57,7 +57,7 @@ const Experiences = () => (
     </div>  
     <h2 className="experiences-title">What Our Guests Say</h2>
     <p className="experiences-subtitle">
-      Discover why discerning travelers consistently choose Synergech for their exclusive and luxurious accommodations around the world.
+      Discover why discerning travelers consistently choose Orange Residency for their exclusive and luxurious accommodations around the world.
     </p>
     <div className="experiences-reviews">
       {reviews.map((review, idx) => (

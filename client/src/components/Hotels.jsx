@@ -8,201 +8,205 @@ import hotel3 from "../assets/Orange Residency/MAN07874.JPG";
 import room1 from "../assets/Orange Residency/MAN07876.JPG";
 import room2 from "../assets/Orange Residency/MAN07879.JPG";
 import room3 from "../assets/Orange Residency/MAN07882.JPG";
+import freeWifiIcon from "../assets/freeWifiIcon.svg";
+import freeBreakfastIcon from "../assets/freeBreakfastIcon.svg";
+import poolIcon from "../assets/poolIcon.svg";
+import roomServiceIcon from "../assets/roomServiceIcon.svg";
 
 const hotelsList = [
   {
-    name: "The Orchid Hotel",
-    location: "Ashram Road, Chennai",
+    name: "2 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
     image: hotel1,
     stars: 4,
-    price: 210,
-    oldPrice: 250,
+    price: 1400,
+    oldPrice: 1650,
     offer: "16% Off!",
     rating: 8.2,
     review: "Excellent",
     reviewCount: 245,
     lastBooked: "18 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
-    name: "Whistling Meadows Resort",
-    location: "SG Highway, Mumbai",
+    name: "4 Bed Standard",
+    location: "Orange Residency, Rameswaram",
     image: hotel2,
     stars: 3,
-    price: 675,
-    oldPrice: 900,
-    offer: "25% Off!",
+    price: 2800,
+    oldPrice: 3300,
+    offer: "15% Off!",
     rating: 9.6,
     review: "Good",
     reviewCount: 1206,
     lastBooked: "9 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv"],
     coupleFriendly: false,
   },
   {
-    name: "Radisson Blu Hotel",
-    location: "Electronic City, Kochi",
+    name: "2 Bed Family",
+    location: "Orange Residency, Rameswaram",
     image: hotel3,
     stars: 5,
-    price: 280,
-    oldPrice: 350,
+    price: 1400,
+    oldPrice: 1750,
     offer: "20% Off!",
     rating: 7.0,
     review: "Amazing Experience",
     reviewCount: 420,
     lastBooked: "2 days ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
-    name: "Lotus Heritage Palace",
-    location: "Heritage Road, Chennai",
+    name: "4 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
     image: room1,
     stars: 4,
-    price: 350,
-    oldPrice: 400,
+    price: 2800,
+    oldPrice: 3200,
     offer: "12% Off!",
     rating: 8.8,
     review: "Excellent",
     reviewCount: 320,
     lastBooked: "1 day ago",
-    amenities: ["wifi", "pool", "restaurant", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: false,
   },
   {
-    name: "Sunset Villa",
-    location: "Lakeview Road, Kolkata",
+    name: "2 Bed Standard",
+    location: "Orange Residency, Rameswaram",
     image: room2,
     stars: 2,
-    price: 180,
-    oldPrice: 220,
+    price: 1400,
+    oldPrice: 1700,
     offer: "18% Off!",
     rating: 7.9,
     review: "Not Bad",
     reviewCount: 210,
     lastBooked: "3 hours ago",
-    amenities: ["wifi", "pool", "restaurant", "bar", "parking"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice"],
     coupleFriendly: false,
   },
   {
-    name: "City Lights Hotel",
-    location: "Downtown, Hyderabad",
+    name: "4 Bed Family",
+    location: "Orange Residency, Rameswaram",
     image: room3,
     stars: 3,
-    price: 120,
-    oldPrice: 150,
+    price: 2800,
+    oldPrice: 3100,
     offer: "10% Off!",
     rating: 6.5,
     review: "Average",
     reviewCount: 110,
     lastBooked: "5 hours ago",
-    amenities: ["wifi", "restaurant", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "cctv"],
     coupleFriendly: false,
   },
   {
-    name: "Taj Hotels",
-    location: "Haji Ali Darag, Mumbai",
-    image: hotel1, // Using available hotel image
+    name: "2 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
+    image: hotel1,
     stars: 5,
-    price: 399,
-    oldPrice: 450,
+    price: 1400,
+    oldPrice: 1600,
     offer: "12% Off!",
     rating: 4.5,
     review: "Excellent",
     reviewCount: 890,
     lastBooked: "2 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
-    name: "Le Royal Meridien",
-    location: "Toopumpodi Street, Kochi",
-    image: hotel2, // Using available hotel image
+    name: "4 Bed Standard",
+    location: "Orange Residency, Rameswaram",
+    image: hotel2,
     stars: 4,
-    price: 299,
-    oldPrice: 350,
+    price: 2800,
+    oldPrice: 3300,
     offer: "15% Off!",
     rating: 4.5,
     review: "Excellent",
     reviewCount: 654,
     lastBooked: "4 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
-    name: "The Westin",
-    location: "Rani Laxmi Nagar, Kolkata",
-    image: hotel3, // Using available hotel image
+    name: "2 Bed Family",
+    location: "Orange Residency, Rameswaram",
+    image: hotel3,
     stars: 5,
-    price: 249,
-    oldPrice: 300,
-    offer: "17% Off!",
+    price: 1400,
+    oldPrice: 1650,
+    offer: "15% Off!",
     rating: 4.5,
     review: "Amazing Experience",
     reviewCount: 432,
     lastBooked: "6 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: false,
   },
   {
-    name: "Lemon Tree Hotels",
-    location: "Main Road 123 Street, Chennai",
-    image: room1, // Using available room image
+    name: "4 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
+    image: room1,
     stars: 4,
-    price: 199,
-    oldPrice: 230,
+    price: 2800,
+    oldPrice: 3200,
     offer: "13% Off!",
     rating: 4.5,
     review: "Excellent",
     reviewCount: 567,
     lastBooked: "1 hour ago",
-    amenities: ["wifi", "pool", "restaurant", "bar", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv"],
     coupleFriendly: false,
   },
   {
-    name: "Grand Hyatt",
-    location: "Marine Drive, Kochi",
-    image: room2, // Using available room image
+    name: "2 Bed Standard",
+    location: "Orange Residency, Rameswaram",
+    image: room2,
     stars: 5,
-    price: 450,
-    oldPrice: 520,
-    offer: "13% Off!",
+    price: 1400,
+    oldPrice: 1650,
+    offer: "15% Off!",
     rating: 9.1,
     review: "Outstanding",
     reviewCount: 1234,
     lastBooked: "30 minutes ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
-    name: "Novotel Hyderabad",
-    location: "HITEC City, Hyderabad",
-    image: room3, // Using available room image
+    name: "4 Bed Family",
+    location: "Orange Residency, Rameswaram",
+    image: room3,
     stars: 4,
-    price: 320,
-    oldPrice: 380,
-    offer: "16% Off!",
+    price: 2800,
+    oldPrice: 3300,
+    offer: "15% Off!",
     rating: 8.7,
     review: "Very Good",
     reviewCount: 876,
     lastBooked: "2 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv"],
     coupleFriendly: false,
   },
   {
-    name: "ITC Grand Chola",
-    location: "Guindy, Chennai",
-    image: hotel1, // Using available hotel image
+    name: "2 Bed Deluxe",
+    location: "Orange Residency, Rameswaram",
+    image: hotel1,
     stars: 5,
-    price: 550,
-    oldPrice: 650,
+    price: 1400,
+    oldPrice: 1650,
     offer: "15% Off!",
     rating: 9.3,
     review: "Exceptional",
     reviewCount: 1567,
     lastBooked: "45 minutes ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
 ];
@@ -215,7 +219,7 @@ const Hotels = () => {
     city: "",
     checkIn: "",
     checkOut: "",
-    roomsPeople: "1 Room, 1 Person"
+    guests: ""
   });
   const [filteredHotels, setFilteredHotels] = useState(hotelsList);
   const [sortBy, setSortBy] = useState("Popularity");
@@ -231,27 +235,39 @@ const Hotels = () => {
   // Read URL parameters and set initial search state
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
-    const cityParam = urlParams.get('city');
+    const roomTypeParam = urlParams.get('city'); // Keep 'city' param for backward compatibility
     const checkinParam = urlParams.get('checkin');
     const checkoutParam = urlParams.get('checkout');
     const guestsParam = urlParams.get('guests');
 
-    if (cityParam || checkinParam || checkoutParam || guestsParam) {
+    if (roomTypeParam || checkinParam || checkoutParam || guestsParam) {
       const newSearchParams = {
-        city: cityParam || "",
+        city: roomTypeParam || "",
         checkIn: checkinParam || "",
         checkOut: checkoutParam || "",
-        roomsPeople: guestsParam ? `${guestsParam} Guest${guestsParam > 1 ? 's' : ''}` : "1 Room, 1 Person"
+        guests: guestsParam || ""
       };
       
       setSearchParams(newSearchParams);
       
       // Apply the search immediately
       let filtered = hotelsList;
-      if (cityParam) {
-        filtered = filtered.filter(hotel => 
-          hotel.location.toLowerCase().includes(cityParam.toLowerCase())
-        );
+      if (roomTypeParam) {
+        if (roomTypeParam === "2 beds") {
+          filtered = filtered.filter(hotel => 
+            hotel.name.toLowerCase().includes("2 bed")
+          );
+        } else if (roomTypeParam === "4 beds") {
+          filtered = filtered.filter(hotel => 
+            hotel.name.toLowerCase().includes("4 bed")
+          );
+        } else {
+          // Fallback for other search terms
+          filtered = filtered.filter(hotel => 
+            hotel.name.toLowerCase().includes(roomTypeParam.toLowerCase()) ||
+            hotel.location.toLowerCase().includes(roomTypeParam.toLowerCase())
+          );
+        }
       }
       
       setFilteredHotels(filtered);
@@ -286,11 +302,23 @@ const Hotels = () => {
     
     let filtered = hotelsList;
     
-    // Filter by city if selected
+    // Filter by room type if selected
     if (searchParams.city) {
-      filtered = filtered.filter(hotel => 
-        hotel.location.toLowerCase().includes(searchParams.city.toLowerCase())
-      );
+      if (searchParams.city === "2 beds") {
+        filtered = filtered.filter(hotel => 
+          hotel.name.toLowerCase().includes("2 bed")
+        );
+      } else if (searchParams.city === "4 beds") {
+        filtered = filtered.filter(hotel => 
+          hotel.name.toLowerCase().includes("4 bed")
+        );
+      } else {
+        // Fallback for other search terms
+        filtered = filtered.filter(hotel => 
+          hotel.name.toLowerCase().includes(searchParams.city.toLowerCase()) ||
+          hotel.location.toLowerCase().includes(searchParams.city.toLowerCase())
+        );
+      }
     }
     
     // Sort the filtered results
@@ -335,7 +363,7 @@ const Hotels = () => {
       city: "",
       checkIn: "",
       checkOut: "",
-      roomsPeople: "1 Room, 1 Person"
+      guests: ""
     });
     setFilteredHotels(hotelsList);
     setSortBy("Popularity");
@@ -353,7 +381,7 @@ const Hotels = () => {
       }));
       
       // Navigate to login page with a message
-      navigate('/login?message=Please log in to book a hotel&returnTo=hotels');
+      navigate('/login?message=Please log in to book a hotel&returnTo=accommodation');
       return;
     }
 
@@ -387,7 +415,7 @@ const Hotels = () => {
     }));
   };
 
-  // Calculate total booking amount
+  // Calculate total booking amount (fixed price regardless of guests)
   const calculateTotalAmount = () => {
     if (!selectedHotel || !bookingDetails.checkIn || !bookingDetails.checkOut) {
       return selectedHotel ? selectedHotel.price : 0;
@@ -400,10 +428,10 @@ const Hotels = () => {
 
     if (nights <= 0) return selectedHotel.price;
 
-    const baseAmount = selectedHotel.price * nights;
-    const guestMultiplier = bookingDetails.guests > 2 ? 1 + ((bookingDetails.guests - 2) * 0.2) : 1;
+    // Fixed price per night regardless of guest count
+    const totalAmount = selectedHotel.price * nights;
     
-    return Math.round(baseAmount * guestMultiplier);
+    return totalAmount;
   };
 
   // Handle booking confirmation
@@ -451,20 +479,17 @@ const Hotels = () => {
   return (
     <div className="hotels-page">
       <div className="hotels-navbar">
-        <div className="hotels-title">Hotels - List Page</div>
-        <div className="hotels-breadcrumb">Home &gt; Hotels &gt; Hotels List Page</div>
+        <div className="hotels-title">Accommodation - List Page</div>
+        <div className="hotels-breadcrumb">Home &gt; Accommodation &gt; Accommodation List Page</div>
         <form className="hotels-searchbar" onSubmit={handleSearch}>
           <select 
             className="hotels-search-input" 
             value={searchParams.city}
             onChange={(e) => handleInputChange('city', e.target.value)}
           >
-            <option value="" disabled>Select city</option>
-            <option value="Chennai">Chennai</option>
-            <option value="Kolkata">Kolkata</option>
-            <option value="Mumbai">Mumbai</option>
-            <option value="Hyderabad">Hyderabad</option>
-            <option value="Kochi">Kochi</option>
+            <option value="" disabled>Select room type</option>
+            <option value="2 beds">2 beds</option>
+            <option value="4 beds">4 beds</option>
           </select>
           <input 
             className="hotels-search-input" 
@@ -480,15 +505,15 @@ const Hotels = () => {
             value={searchParams.checkOut}
             onChange={(e) => handleInputChange('checkOut', e.target.value)}
           />
-          <select 
-            className="hotels-search-input"
-            value={searchParams.roomsPeople}
-            onChange={(e) => handleInputChange('roomsPeople', e.target.value)}
-          >
-            <option>1 Room, 1 Person</option>
-            <option>1 Room, 2 People</option>
-            <option>2 Rooms, 4 People</option>
-          </select>
+          <input 
+            className="hotels-search-input" 
+            type="number" 
+            min="1"
+            max="10"
+            placeholder="Number of guests"
+            value={searchParams.guests || ""}
+            onChange={(e) => handleInputChange('guests', e.target.value)}
+          />
           <button className="hotels-search-btn" type="submit">Search</button>
           <button 
             className="hotels-clear-btn" 
@@ -512,7 +537,7 @@ const Hotels = () => {
               )}
               {searchParams.city && (
                 <span className="search-results-info">
-                  {filteredHotels.length} hotel{filteredHotels.length !== 1 ? 's' : ''} found in {searchParams.city}
+                  {filteredHotels.length} {searchParams.city === "2 beds" ? "2-bed rooms" : searchParams.city === "4 beds" ? "4-bed rooms" : "accommodation"} found
                 </span>
               )}
             </div>
@@ -541,14 +566,13 @@ const Hotels = () => {
                     </div>
                     <div className="hotel-card-location">{hotel.location}</div>
                     <div className="hotel-card-amenities">
-                      <span title="WiFi">📶</span>
-                      <span title="Pool">🏊</span>
-                      <span title="Gym">🏋️</span>
-                      <span title="Restaurant">🍽️</span>
-                      <span title="Bar">🍸</span>
-                      <span title="Parking">🅿️</span>
-                      <span title="AC">❄️</span>
-                      <span title="Spa">💆</span>
+                      {hotel.amenities.includes('wifi') && <span title="Free WiFi"><img src={freeWifiIcon} alt="WiFi" style={{width: '16px', height: '16px'}} /></span>}
+                      {hotel.amenities.includes('ac') && <span title="AC Rooms">❄️</span>}
+                      {hotel.amenities.includes('hotwater') && <span title="Hot Water">🚿</span>}
+                      {hotel.amenities.includes('parking') && <span title="Parking">🅿️</span>}
+                      {hotel.amenities.includes('roomservice') && <span title="Room Service"><img src={roomServiceIcon} alt="Room Service" style={{width: '16px', height: '16px'}} /></span>}
+                      {hotel.amenities.includes('cctv') && <span title="CCTV Security">📹</span>}
+                      {hotel.amenities.includes('powerbackup') && <span title="Power Backup">🔋</span>}
                       {hotel.coupleFriendly && <span className="hotel-couple">Couple Friendly</span>}
                     </div>
                     <div className="hotel-card-rating-row">
@@ -560,8 +584,8 @@ const Hotels = () => {
                   </div>
                   <div className="hotel-card-price">
                     <div className="hotel-card-offer">{hotel.offer}</div>
-                    <div className="hotel-card-oldprice">${hotel.oldPrice}</div>
-                    <div className="hotel-card-newprice">${hotel.price}</div>
+                    <div className="hotel-card-oldprice">₹{hotel.oldPrice}</div>
+                    <div className="hotel-card-newprice">₹{hotel.price}</div>
                     <div className="hotel-card-pernight">1 Room/Night</div>
                     <button 
                       className="hotel-card-bookbtn"
@@ -574,7 +598,7 @@ const Hotels = () => {
               ))
             ) : (
               <div className="no-results">
-                <p>No hotels found matching your search criteria. Please try different filters.</p>
+                <p>No {searchParams.city === "2 beds" ? "2-bed rooms" : searchParams.city === "4 beds" ? "4-bed rooms" : "accommodation"} found matching your search criteria. Please try different filters.</p>
               </div>
             )}
           </div>
@@ -613,14 +637,13 @@ const Hotels = () => {
                 <div className="modal-amenities">
                   <h3>Amenities & Services</h3>
                   <div className="modal-amenities-grid">
-                    {selectedHotel.amenities.includes('wifi') && <div className="amenity-item">📶 Free WiFi</div>}
-                    {selectedHotel.amenities.includes('pool') && <div className="amenity-item">🏊 Swimming Pool</div>}
-                    {selectedHotel.amenities.includes('gym') && <div className="amenity-item">🏋️ Fitness Center</div>}
-                    {selectedHotel.amenities.includes('restaurant') && <div className="amenity-item">🍽️ Restaurant</div>}
-                    {selectedHotel.amenities.includes('bar') && <div className="amenity-item">🍸 Bar</div>}
+                    {selectedHotel.amenities.includes('wifi') && <div className="amenity-item"><img src={freeWifiIcon} alt="WiFi" style={{width: '20px', height: '20px', marginRight: '8px'}} />Free WiFi</div>}
+                    {selectedHotel.amenities.includes('ac') && <div className="amenity-item">❄️ AC Rooms</div>}
+                    {selectedHotel.amenities.includes('hotwater') && <div className="amenity-item">🚿 Hot Water</div>}
                     {selectedHotel.amenities.includes('parking') && <div className="amenity-item">🅿️ Free Parking</div>}
-                    {selectedHotel.amenities.includes('ac') && <div className="amenity-item">❄️ Air Conditioning</div>}
-                    {selectedHotel.amenities.includes('spa') && <div className="amenity-item">💆 Spa Services</div>}
+                    {selectedHotel.amenities.includes('roomservice') && <div className="amenity-item"><img src={roomServiceIcon} alt="Room Service" style={{width: '20px', height: '20px', marginRight: '8px'}} />Room Service</div>}
+                    {selectedHotel.amenities.includes('cctv') && <div className="amenity-item">📹 CCTV Security</div>}
+                    {selectedHotel.amenities.includes('powerbackup') && <div className="amenity-item">🔋 Power Backup</div>}
                   </div>
                 </div>
 
@@ -661,19 +684,16 @@ const Hotels = () => {
                     
                     <div className="booking-field">
                       <label htmlFor="modal-guests">Number of Guests</label>
-                      <select
+                      <input
                         id="modal-guests"
+                        type="number"
+                        min="1"
+                        max="10"
                         value={bookingDetails.guests}
-                        onChange={(e) => handleBookingChange('guests', parseInt(e.target.value))}
+                        onChange={(e) => handleBookingChange('guests', parseInt(e.target.value) || 1)}
                         className="booking-input"
-                      >
-                        <option value={1}>1 Guest</option>
-                        <option value={2}>2 Guests</option>
-                        <option value={3}>3 Guests</option>
-                        <option value={4}>4 Guests</option>
-                        <option value={5}>5 Guests</option>
-                        <option value={6}>6 Guests</option>
-                      </select>
+                        placeholder="Enter number of guests"
+                      />
                     </div>
                   </div>
                 </div>
@@ -682,34 +702,25 @@ const Hotels = () => {
                   <div className="pricing-breakdown">
                     <div className="price-row">
                       <span>Base Price (per night)</span>
-                      <span>${selectedHotel.price}</span>
+                      <span>₹{selectedHotel.price}</span>
                     </div>
                     
                     {bookingDetails.checkIn && bookingDetails.checkOut && (
-                      <>
-                        <div className="price-row">
-                          <span>Number of Nights</span>
-                          <span>
-                            {Math.max(1, Math.ceil((new Date(bookingDetails.checkOut) - new Date(bookingDetails.checkIn)) / (1000 * 3600 * 24)))} nights
-                          </span>
-                        </div>
-                        
-                        {bookingDetails.guests > 2 && (
-                          <div className="price-row">
-                            <span>Extra Guest Fee ({bookingDetails.guests - 2} guests)</span>
-                            <span>+20% per guest</span>
-                          </div>
-                        )}
-                      </>
+                      <div className="price-row">
+                        <span>Number of Nights</span>
+                        <span>
+                          {Math.max(1, Math.ceil((new Date(bookingDetails.checkOut) - new Date(bookingDetails.checkIn)) / (1000 * 3600 * 24)))} nights
+                        </span>
+                      </div>
                     )}
                     
                     <div className="price-row total-row">
                       <span>Total Amount</span>
-                      <span className="total-price">${calculateTotalAmount()}</span>
+                      <span className="total-price">₹{calculateTotalAmount()}</span>
                     </div>
                     
                     <div className="savings-info">
-                      Original Price: ${selectedHotel.oldPrice} • You Save: {selectedHotel.offer}
+                      Original Price: ₹{selectedHotel.oldPrice} • You Save: {selectedHotel.offer}
                     </div>
                   </div>
                 </div>
@@ -725,7 +736,7 @@ const Hotels = () => {
                 disabled={!bookingDetails.checkIn || !bookingDetails.checkOut}
                 onClick={handleBookingConfirmation}
               >
-                Confirm Booking - ${calculateTotalAmount()}
+                Confirm Booking - ₹{calculateTotalAmount()}
               </button>
             </div>
           </div>

@@ -34,9 +34,10 @@ const Navbar = () => {
       </div>
       <div className="navbar-links">
         <a href="/" className="navbar-link">Home</a>
-        <a href="/hotels" className="navbar-link">Hotels</a>
+        <a href="/accommodation" className="navbar-link">Accommodation</a>
         <a href="/experiences" className="navbar-link">Experiences</a>
         <a href="/about" className="navbar-link">About</a>
+        <a href="/contact" className="navbar-link">Contact</a>
       </div>
       <div className="navbar-actions">
         <img src={searchIcon} alt="search" className="navbar-icon" />

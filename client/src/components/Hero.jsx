@@ -14,21 +14,55 @@ import calenderIcon from "../assets/calenderIcon.svg";
 import guestsIcon from "../assets/guestsIcon.svg";
 import searchIcon from "../assets/searchIcon.svg";
 
-// Array of background images for slideshow
+// Array of background images for slideshow with titles
 const backgroundImages = [
-  heroImage,
-  exclusiveOfferCardImg1,
-  exclusiveOfferCardImg2,
-  exclusiveOfferCardImg3,
-  roomImg1,
-  roomImg2,
-  roomImg3,
-  roomImg4
+  { 
+    src: heroImage, 
+    title: "Luxury Accommodation",
+    subtitle: "Experience comfort like never before"
+  },
+  { 
+    src: exclusiveOfferCardImg1, 
+    title: "Premium Rooms",
+    subtitle: "Elegantly designed for your comfort"
+  },
+  { 
+    src: exclusiveOfferCardImg2, 
+    title: "Sacred Rameswaram",
+    subtitle: "Stay close to divine experiences"
+  },
+  { 
+    src: exclusiveOfferCardImg3, 
+    title: "Modern Amenities",
+    subtitle: "All facilities for a perfect stay"
+  },
+  { 
+    src: roomImg1, 
+    title: "Spacious Interiors",
+    subtitle: "Rooms designed for relaxation"
+  },
+  { 
+    src: roomImg2, 
+    title: "Orange Residency",
+    subtitle: "Your home away from home"
+  },
+  { 
+    src: roomImg3, 
+    title: "Peaceful Environment",
+    subtitle: "Tranquil surroundings for rest"
+  },
+  { 
+    src: roomImg4, 
+    title: "Exceptional Service",
+    subtitle: "Hospitality that exceeds expectations"
+  }
 ];
 
 const Hero = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [searchData, setSearchData] = useState({
     destination: "",
     checkin: "",
@@ -36,17 +70,37 @@ const Hero = () => {
     guests: ""
   });
 
-  // Auto-change background image every 3 seconds
+  // Auto-change background image every 4 seconds with smooth transition
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 3000); // Change every 3 seconds
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => {
+          const newIndex = (prevIndex + 1) % backgroundImages.length;
+          setNextImageIndex((newIndex + 1) % backgroundImages.length);
+          return newIndex;
+        });
+        setIsTransitioning(false);
+      }, 500); // Half second transition
+    }, 4000); // Change every 4 seconds
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
+
+  // Handle manual slide change
+  const handleSlideChange = (index) => {
+    if (index !== currentImageIndex && !isTransitioning) {
+      setIsTransitioning(true);
+      setNextImageIndex(index);
+      
+      setTimeout(() => {
+        setCurrentImageIndex(index);
+        setIsTransitioning(false);
+      }, 500);
+    }
+  };
 
   // Handle input changes
   const handleInputChange = (field, value) => {
@@ -67,27 +121,42 @@ const Hero = () => {
     if (searchData.checkout) searchParams.set('checkout', searchData.checkout);
     if (searchData.guests) searchParams.set('guests', searchData.guests);
     
-    // Navigate to hotels page with search parameters
-    navigate(`/hotels?${searchParams.toString()}`);
+    // Navigate to accommodation page with search parameters
+    navigate(`/accommodation?${searchParams.toString()}`);
   };
 
   return (
-    <div
-      className="hero-section"
-      style={{ backgroundImage: `url(${backgroundImages[currentImageIndex]})` }}
-    >
+    <div className="hero-section">
+      {/* Background Images with Smooth Transition */}
+      <div 
+        className={`hero-background ${isTransitioning ? 'transitioning' : ''}`}
+        style={{ backgroundImage: `url(${backgroundImages[currentImageIndex].src})` }}
+      />
+      <div 
+        className={`hero-background hero-background-next ${isTransitioning ? 'active' : ''}`}
+        style={{ backgroundImage: `url(${backgroundImages[nextImageIndex].src})` }}
+      />
+      
       <div className="hero-overlay"></div>
+      
       <div className="hero-content">
         <span className="hero-label">The Ultimate Hotel Experience</span>
         <h1 className="hero-title">
-          Discover Your Perfect<br />Getaway Destination
+          <span className={`title-line ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            {backgroundImages[currentImageIndex].title}
+          </span>
+          <br />
+          <span className={`subtitle-line ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+            {backgroundImages[currentImageIndex].subtitle}
+          </span>
         </h1>
+        
         <form className="hero-searchbar" onSubmit={handleSearch}>
-          {/* Destination Dropdown */}
+          {/* Rooms Dropdown */}
           <div className="search-field">
             <div className="search-label-row">
               <img src={locationIcon} alt="location" height={20} width={20} />
-              <label htmlFor="destination">Destination</label>
+              <label htmlFor="destination">Rooms</label>
             </div>
             <select 
               id="destination" 
@@ -95,12 +164,9 @@ const Hero = () => {
               value={searchData.destination}
               onChange={(e) => handleInputChange('destination', e.target.value)}
             >
-              <option value="" disabled>Select city</option>
-              <option value="Chennai">Chennai</option>
-              <option value="Kolkata">Kolkata</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Hyderabad">Hyderabad</option>
-              <option value="Kochi">Kochi</option>
+              <option value="" disabled>Select room type</option>
+              <option value="2 beds">2 beds</option>
+              <option value="4 beds">4 beds</option>
             </select>
           </div>
           {/* Check in Date */}
@@ -163,10 +229,24 @@ const Hero = () => {
           <div
             key={index}
             className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-            onClick={() => setCurrentImageIndex(index)}
+            onClick={() => handleSlideChange(index)}
           />
         ))}
       </div>
+      
+      {/* Navigation Arrows */}
+      <button 
+        className="hero-nav-btn hero-nav-prev"
+        onClick={() => handleSlideChange((currentImageIndex - 1 + backgroundImages.length) % backgroundImages.length)}
+      >
+        ‹
+      </button>
+      <button 
+        className="hero-nav-btn hero-nav-next"
+        onClick={() => handleSlideChange((currentImageIndex + 1) % backgroundImages.length)}
+      >
+        ›
+      </button>
     </div>
   );
 };

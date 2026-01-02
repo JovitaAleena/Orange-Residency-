@@ -8,74 +8,76 @@ import roomImg1 from "../assets/Orange Residency/MAN07885.JPG";
 import roomImg2 from "../assets/Orange Residency/MAN07891.JPG";
 import roomImg3 from "../assets/Orange Residency/MAN07904.JPG";
 import roomImg4 from "../assets/Orange Residency/MAN07915.JPG";
+import freeWifiIcon from "../assets/freeWifiIcon.svg";
+import roomServiceIcon from "../assets/roomServiceIcon.svg";
 
 const featuredRooms = [
   {
     id: 1,
     image: roomImg1,
     bestSeller: true,
-    name: "Taj Hotels",
-    address: "Haji Ali Darag , Mumbai",
-    price: 399,
-    oldPrice: 450,
-    offer: "12% Off!",
+    name: "2 Bed Deluxe",
+    address: "Orange Residency, Rameswaram",
+    price: 1400,
+    oldPrice: 1650,
+    offer: "15% Off!",
     rating: 4.5,
     stars: 5,
     review: "Excellent",
     reviewCount: 890,
     lastBooked: "2 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: true,
   },
   {
     id: 2,
     image: roomImg2,
     bestSeller: false,
-    name: "Le Royal Meridien",
-    address: "Toopumpodi Street, Kochi",
-    price: 299,
-    oldPrice: 350,
+    name: "4 Bed Standard",
+    address: "Orange Residency, Rameswaram",
+    price: 2800,
+    oldPrice: 3300,
     offer: "15% Off!",
     rating: 4.5,
     stars: 4,
     review: "Excellent",
     reviewCount: 654,
     lastBooked: "4 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv"],
     coupleFriendly: true,
   },
   {
     id: 3,
     image: roomImg3,
     bestSeller: true,
-    name: "The Westin",
-    address: "Rani Laxmi Nagar , Kolkata",
-    price: 249,
-    oldPrice: 300,
-    offer: "17% Off!",
+    name: "2 Bed Family",
+    address: "Orange Residency, Rameswaram",
+    price: 1400,
+    oldPrice: 1650,
+    offer: "15% Off!",
     rating: 4.5,
     stars: 5,
     review: "Amazing Experience",
     reviewCount: 432,
     lastBooked: "6 hours ago",
-    amenities: ["wifi", "pool", "gym", "restaurant", "bar", "parking", "ac", "spa"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv", "powerbackup"],
     coupleFriendly: false,
   },
   {
     id: 4,
     image: roomImg4,
     bestSeller: false,
-    name: "Lemon Tree Hotels",
-    address: "Main Road 123 Street , Chennai",
-    price: 199,
-    oldPrice: 230,
-    offer: "13% Off!",
+    name: "4 Bed Family",
+    address: "Orange Residency, Rameswaram",
+    price: 2800,
+    oldPrice: 3300,
+    offer: "15% Off!",
     rating: 4.5,
     stars: 4,
     review: "Excellent",
     reviewCount: 567,
     lastBooked: "1 hour ago",
-    amenities: ["wifi", "pool", "restaurant", "bar", "parking", "ac"],
+    amenities: ["wifi", "ac", "hotwater", "parking", "roomservice", "cctv"],
     coupleFriendly: false,
   },
 ];
@@ -126,7 +128,7 @@ const FeaturedDestination = () => {
       }));
       
       // Navigate to login page with a message
-      navigate('/login?message=Please log in to book a hotel&returnTo=home');
+      navigate('/login?message=Please log in to book a hotel&returnTo=accommodation');
       return;
     }
 
@@ -160,7 +162,7 @@ const FeaturedDestination = () => {
     }));
   };
 
-  // Calculate total booking amount
+  // Calculate total booking amount (fixed price regardless of guests)
   const calculateTotalAmount = () => {
     if (!selectedHotel || !bookingDetails.checkIn || !bookingDetails.checkOut) {
       return selectedHotel ? selectedHotel.price : 0;
@@ -173,10 +175,10 @@ const FeaturedDestination = () => {
 
     if (nights <= 0) return selectedHotel.price;
 
-    const baseAmount = selectedHotel.price * nights;
-    const guestMultiplier = bookingDetails.guests > 2 ? 1 + ((bookingDetails.guests - 2) * 0.2) : 1;
+    // Fixed price per night regardless of guest count
+    const totalAmount = selectedHotel.price * nights;
     
-    return Math.round(baseAmount * guestMultiplier);
+    return totalAmount;
   };
 
   // Handle booking confirmation
@@ -223,7 +225,7 @@ const FeaturedDestination = () => {
   };
   return (
     <section className="featured-section">
-      <h2 className="featured-title">Featured Destination</h2>
+      <h2 className="featured-title">Featured Rooms</h2>
       <p className="featured-desc">
         Discover our handpicked selection of exceptional properties around the world, offering unparalleled luxury and unforgettable experiences.
       </p>
@@ -246,7 +248,7 @@ const FeaturedDestination = () => {
                 <span>{room.address}</span>
               </div>
               <div className="featured-row featured-bottom">
-                <span className="featured-price">${room.price}<span className="featured-night">/night</span></span>
+                <span className="featured-price">₹{room.price}<span className="featured-night">/night</span></span>
                 <button 
                   className="featured-btn"
                   onClick={() => openBookingModal(room)}
@@ -259,7 +261,7 @@ const FeaturedDestination = () => {
         ))}
       </div>
       <div className="featured-footer">
-        <button className="featured-view-btn" onClick={() => navigate('/hotels')}>View All Destinations</button>
+        <button className="featured-view-btn" onClick={() => navigate('/accommodation')}>View All Rooms</button>
       </div>
 
       {/* Hotel Booking Modal */}
@@ -294,14 +296,13 @@ const FeaturedDestination = () => {
                 <div className="modal-amenities">
                   <h3>Amenities & Services</h3>
                   <div className="modal-amenities-grid">
-                    {selectedHotel.amenities.includes('wifi') && <div className="amenity-item">📶 Free WiFi</div>}
-                    {selectedHotel.amenities.includes('pool') && <div className="amenity-item">🏊 Swimming Pool</div>}
-                    {selectedHotel.amenities.includes('gym') && <div className="amenity-item">🏋️ Fitness Center</div>}
-                    {selectedHotel.amenities.includes('restaurant') && <div className="amenity-item">🍽️ Restaurant</div>}
-                    {selectedHotel.amenities.includes('bar') && <div className="amenity-item">🍸 Bar</div>}
+                    {selectedHotel.amenities.includes('wifi') && <div className="amenity-item"><img src={freeWifiIcon} alt="WiFi" style={{width: '20px', height: '20px', marginRight: '8px'}} />Free WiFi</div>}
+                    {selectedHotel.amenities.includes('ac') && <div className="amenity-item">❄️ AC Rooms</div>}
+                    {selectedHotel.amenities.includes('hotwater') && <div className="amenity-item">🚿 Hot Water</div>}
                     {selectedHotel.amenities.includes('parking') && <div className="amenity-item">🅿️ Free Parking</div>}
-                    {selectedHotel.amenities.includes('ac') && <div className="amenity-item">❄️ Air Conditioning</div>}
-                    {selectedHotel.amenities.includes('spa') && <div className="amenity-item">💆 Spa Services</div>}
+                    {selectedHotel.amenities.includes('roomservice') && <div className="amenity-item"><img src={roomServiceIcon} alt="Room Service" style={{width: '20px', height: '20px', marginRight: '8px'}} />Room Service</div>}
+                    {selectedHotel.amenities.includes('cctv') && <div className="amenity-item">📹 CCTV Security</div>}
+                    {selectedHotel.amenities.includes('powerbackup') && <div className="amenity-item">🔋 Power Backup</div>}
                   </div>
                 </div>
 
@@ -342,19 +343,16 @@ const FeaturedDestination = () => {
                     
                     <div className="booking-field">
                       <label htmlFor="modal-guests">Number of Guests</label>
-                      <select
+                      <input
                         id="modal-guests"
+                        type="number"
+                        min="1"
+                        max="10"
                         value={bookingDetails.guests}
-                        onChange={(e) => handleBookingChange('guests', parseInt(e.target.value))}
+                        onChange={(e) => handleBookingChange('guests', parseInt(e.target.value) || 1)}
                         className="booking-input"
-                      >
-                        <option value={1}>1 Guest</option>
-                        <option value={2}>2 Guests</option>
-                        <option value={3}>3 Guests</option>
-                        <option value={4}>4 Guests</option>
-                        <option value={5}>5 Guests</option>
-                        <option value={6}>6 Guests</option>
-                      </select>
+                        placeholder="Enter number of guests"
+                      />
                     </div>
                   </div>
                 </div>
@@ -363,34 +361,25 @@ const FeaturedDestination = () => {
                   <div className="pricing-breakdown">
                     <div className="price-row">
                       <span>Base Price (per night)</span>
-                      <span>${selectedHotel.price}</span>
+                      <span>₹{selectedHotel.price}</span>
                     </div>
                     
                     {bookingDetails.checkIn && bookingDetails.checkOut && (
-                      <>
-                        <div className="price-row">
-                          <span>Number of Nights</span>
-                          <span>
-                            {Math.max(1, Math.ceil((new Date(bookingDetails.checkOut) - new Date(bookingDetails.checkIn)) / (1000 * 3600 * 24)))} nights
-                          </span>
-                        </div>
-                        
-                        {bookingDetails.guests > 2 && (
-                          <div className="price-row">
-                            <span>Extra Guest Fee ({bookingDetails.guests - 2} guests)</span>
-                            <span>+20% per guest</span>
-                          </div>
-                        )}
-                      </>
+                      <div className="price-row">
+                        <span>Number of Nights</span>
+                        <span>
+                          {Math.max(1, Math.ceil((new Date(bookingDetails.checkOut) - new Date(bookingDetails.checkIn)) / (1000 * 3600 * 24)))} nights
+                        </span>
+                      </div>
                     )}
                     
                     <div className="price-row total-row">
                       <span>Total Amount</span>
-                      <span className="total-price">${calculateTotalAmount()}</span>
+                      <span className="total-price">₹{calculateTotalAmount()}</span>
                     </div>
                     
                     <div className="savings-info">
-                      Original Price: ${selectedHotel.oldPrice} • You Save: {selectedHotel.offer}
+                      Original Price: ₹{selectedHotel.oldPrice} • You Save: {selectedHotel.offer}
                     </div>
                   </div>
                 </div>
@@ -406,7 +395,7 @@ const FeaturedDestination = () => {
                 disabled={!bookingDetails.checkIn || !bookingDetails.checkOut}
                 onClick={handleBookingConfirmation}
               >
-                Confirm Booking - ${calculateTotalAmount()}
+                Confirm Booking - ₹{calculateTotalAmount()}
               </button>
             </div>
           </div>
