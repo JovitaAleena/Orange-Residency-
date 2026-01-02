@@ -1,1 +1,1 @@
-# Hotel-Booking
+# Residency-Booking
