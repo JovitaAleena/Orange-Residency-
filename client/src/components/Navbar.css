@@ -5,7 +5,7 @@
   margin: 0 auto;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
-  padding: 1.2rem 2.5rem;
+  padding: 1.5rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,7 @@
 }
 
 .navbar-logo img {
-  height: 2.5rem;
+  height: 3.5rem;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
 }
 

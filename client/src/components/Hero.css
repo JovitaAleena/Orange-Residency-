@@ -25,7 +25,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
 }
 
@@ -51,7 +51,7 @@
   inset: 0;
   background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(210, 105, 30, 0.2) 100%);
   z-index: 1;
-  animation: overlayPulse 8s ease-in-out infinite;
+  animation: overlayPulse 12s ease-in-out infinite;
 }
 
 @keyframes overlayPulse {
@@ -75,7 +75,7 @@
   align-items: flex-start;
   opacity: 0;
   transform: translateY(30px);
-  animation: heroContentSlideIn 1.5s ease-out forwards;
+  animation: heroContentSlideIn 2.5s ease-out forwards;
 }
 
 @keyframes heroContentSlideIn {
@@ -97,7 +97,7 @@
   margin-bottom: 1.5rem;
   position: relative;
   overflow: hidden;
-  animation: labelFloat 3s ease-in-out infinite;
+  animation: labelFloat 4s ease-in-out infinite;
 }
 
 @keyframes labelFloat {
@@ -117,7 +117,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: labelShimmer 3s infinite;
+  animation: labelShimmer 4s infinite;
 }
 
 @keyframes labelShimmer {
@@ -145,11 +145,11 @@
   display: inline-block;
   opacity: 0;
   transform: translateX(-30px);
-  animation: titleSlideIn 1s ease-out forwards;
+  animation: titleSlideIn 1.5s ease-out forwards;
 }
 
 .title-line {
-  animation-delay: 0.5s;
+  animation-delay: 1s;
   background: linear-gradient(135deg, #fff, #ffe4cc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -157,7 +157,7 @@
 }
 
 .subtitle-line {
-  animation-delay: 0.8s;
+  animation-delay: 1.5s;
   font-size: 2rem;
   color: #ffe4cc;
 }
@@ -209,7 +209,7 @@
   max-width: 950px;
   opacity: 0;
   transform: translateY(30px);
-  animation: searchbarSlideIn 1s ease-out 1.2s forwards;
+  animation: searchbarSlideIn 1.5s ease-out 2s forwards;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -345,7 +345,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  animation: navButtonSlideIn 1s ease-out 2s forwards;
+  animation: navButtonSlideIn 1.5s ease-out 3s forwards;
 }
 
 @keyframes navButtonSlideIn {
@@ -379,7 +379,7 @@
   gap: 0.8rem;
   z-index: 3;
   opacity: 0;
-  animation: indicatorsSlideIn 1s ease-out 1.8s forwards;
+  animation: indicatorsSlideIn 1.5s ease-out 2.5s forwards;
 }
 
 @keyframes indicatorsSlideIn {

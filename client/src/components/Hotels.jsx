@@ -487,7 +487,7 @@ const Hotels = () => {
             value={searchParams.city}
             onChange={(e) => handleInputChange('city', e.target.value)}
           >
-            <option value="" disabled>Select room type</option>
+            <option value="" disabled>Room type</option>
             <option value="2 beds">2 beds</option>
             <option value="4 beds">4 beds</option>
           </select>
@@ -510,7 +510,7 @@ const Hotels = () => {
             type="number" 
             min="1"
             max="10"
-            placeholder="Number of guests"
+            placeholder="Guests"
             value={searchParams.guests || ""}
             onChange={(e) => handleInputChange('guests', e.target.value)}
           />
@@ -683,7 +683,7 @@ const Hotels = () => {
                     </div>
                     
                     <div className="booking-field">
-                      <label htmlFor="modal-guests">Number of Guests</label>
+                      <label htmlFor="modal-guests">Guests</label>
                       <input
                         id="modal-guests"
                         type="number"

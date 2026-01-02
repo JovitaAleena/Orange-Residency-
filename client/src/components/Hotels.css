@@ -16,11 +16,11 @@
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 .hotels-title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 700;
 }
 .hotels-breadcrumb {
-  font-size: 0.98rem;
+  font-size: 1.1rem;
   color: #cfd8e3;
   margin-top: 0.2rem;
 }
@@ -42,7 +42,7 @@
   padding: 0.7rem 1.1rem;
   border-radius: 0.6rem;
   border: 1.5px solid #e5e7eb;
-  font-size: 1rem;
+  font-size: 1.1rem;
   background: #f8fafc;
   min-width: 150px;
   outline: none;
@@ -56,7 +56,7 @@
   border-radius: 0.6rem;
   padding: 0.7rem 2.1rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.2s;
   height: 48px;
@@ -75,7 +75,7 @@
   border-radius: 0.6rem;
   padding: 0.7rem 1.5rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.2s;
   height: 48px;
@@ -145,12 +145,12 @@
   margin-bottom: 1.2rem;
 }
 .hotels-list-location {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #223a6a;
 }
 .hotels-list-note {
   color: #f59e42;
-  font-size: 0.98rem;
+  font-size: 1.1rem;
   margin-left: 0.7rem;
 }
 
@@ -176,7 +176,7 @@
   display: inline-block;
 }
 .hotels-list-sort label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #223a6a;
   margin-right: 0.5rem;
 }
@@ -184,7 +184,7 @@
   padding: 0.4rem 1rem;
   border-radius: 0.5rem;
   border: 1.5px solid #e5e7eb;
-  font-size: 1rem;
+  font-size: 1.1rem;
   background: #f8fafc;
 }
 .hotels-list {
@@ -255,24 +255,24 @@
   gap: 1.2rem;
 }
 .hotel-card-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #23244a;
 }
 .hotel-card-stars {
   color: #fbbf24;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .hotel-card-location {
   color: #64748b;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .hotel-card-amenities {
   display: flex;
   align-items: center;
   gap: 0.7rem;
   color: #223a6a;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .hotel-couple {
   background: #eef89b;
@@ -287,7 +287,7 @@
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .hotel-rating-badge {
   background: #22c55e;
@@ -295,7 +295,7 @@
   font-weight: 700;
   border-radius: 0.5rem;
   padding: 0.2rem 0.7rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .hotel-rating-label {
   color: #22c55e;
@@ -323,21 +323,21 @@
 .hotel-card-offer {
   color: #22c55e;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .hotel-card-oldprice {
   color: #bdbdbd;
   text-decoration: line-through;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .hotel-card-newprice {
   color: #223a6a;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 .hotel-card-pernight {
   color: #64748b;
-  font-size: 0.98rem;
+  font-size: 1.1rem;
 }
 .hotel-card-bookbtn {
   background: #ff6b35;
@@ -346,7 +346,7 @@
   border-radius: 0.5rem;
   padding: 0.6rem 1.3rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   margin-top: 0.7rem;
   transition: background 0.2s;

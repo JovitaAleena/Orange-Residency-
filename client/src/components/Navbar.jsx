@@ -26,10 +26,9 @@ const Navbar = () => {
         <a href="/" className="navbar-logo">
           <img
             src={logo}
-            alt="logo"
-            style={{ height: '40px', width: 'auto', display: 'block' }}
+            alt="Orange Residency"
+            style={{ height: '55px', width: 'auto', display: 'block' }}
           />
-          <span className="navbar-brand">Orange Residency</span>
         </a>
       </div>
       <div className="navbar-links">
